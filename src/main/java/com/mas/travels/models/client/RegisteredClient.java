@@ -22,4 +22,9 @@ public class RegisteredClient extends Client {
             inverseJoinColumns = { @JoinColumn(name = "travel_id") }
     )
     private List<Travel> travels;
+
+    public void addClient() {}
+    public void removeClient() {}
+    public void assignTravel() {}
+
 }

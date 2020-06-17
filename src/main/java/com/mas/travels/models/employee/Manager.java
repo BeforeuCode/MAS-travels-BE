@@ -14,4 +14,9 @@ import javax.persistence.Entity;
 @DiscriminatorValue("manager")
 public class Manager extends Employee {
     private Integer bonus;
+
+    @Override
+    public void calculateSalary() {
+
+    }
 }

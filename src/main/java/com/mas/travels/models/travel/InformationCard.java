@@ -14,4 +14,6 @@ public class InformationCard {
     private String information;
     private String comments;
     private String restrictions;
+
+    public void addInformationCard(){};
 }

@@ -26,4 +26,9 @@ public class Guide extends Employee {
             inverseJoinColumns = { @JoinColumn(name = "travel_id") }
     )
     private List<Travel> travels;
+
+    @Override
+    public void calculateSalary() {
+
+    }
 }

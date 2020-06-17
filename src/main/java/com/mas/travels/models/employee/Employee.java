@@ -23,4 +23,8 @@ public abstract class Employee extends Person {
     @Enumerated(STRING)
     private EmploymentType employment;
     private String contract;
+
+    public abstract void calculateSalary();
+    public void addEmployee() {};
+    public void removeEmployee() {};
 }

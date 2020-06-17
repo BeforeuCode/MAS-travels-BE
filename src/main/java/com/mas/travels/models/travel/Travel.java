@@ -32,4 +32,8 @@ public class Travel extends BaseEntity {
     private InformationCard informationCard;
     @ManyToMany(mappedBy = "travels")
     private List<Guide> guides;
+
+    public void addTravel(){};
+    public void askForContact(){};
+
 }
