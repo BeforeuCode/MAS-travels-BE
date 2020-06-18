@@ -1,8 +1,7 @@
 package com.mas.travels.models.travel;
 
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
+import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
@@ -10,7 +9,9 @@ import javax.persistence.Entity;
 @Getter
 @Setter
 @RequiredArgsConstructor
+@AllArgsConstructor
 @Entity
+@SuperBuilder
 @DiscriminatorValue("abroadTravel")
 public class AbroadTravel extends Travel {
     private String country;

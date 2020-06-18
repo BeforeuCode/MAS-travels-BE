@@ -17,7 +17,7 @@ public class RegisteredClient extends Client {
 
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(
-            name = "registeredClient_travel",
+            name = "registered_client_travel",
             joinColumns = { @JoinColumn(name = "client_id") },
             inverseJoinColumns = { @JoinColumn(name = "travel_id") }
     )

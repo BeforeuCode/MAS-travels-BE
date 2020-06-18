@@ -1,6 +1,8 @@
 package com.mas.travels.models.common;
 
 import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -10,6 +12,8 @@ import java.util.Objects;
 
 @MappedSuperclass
 @Getter
+@RequiredArgsConstructor
+@SuperBuilder
 public class BaseEntity {
 
     @Id
