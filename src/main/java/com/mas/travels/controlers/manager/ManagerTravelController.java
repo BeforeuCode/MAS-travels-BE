@@ -1,6 +1,6 @@
 package com.mas.travels.controlers.manager;
 
-import com.mas.travels.models.dto.TravelDTO;
+import com.mas.travels.models.dto.request.TravelDTO;
 import com.mas.travels.services.TravelService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -28,7 +28,5 @@ public class ManagerTravelController {
         } catch (Exception e) {
             return new ResponseEntity<>(e, HttpStatus.BAD_REQUEST);
         }
-    }
-    public void addNewInformationCard() {
     }
 }

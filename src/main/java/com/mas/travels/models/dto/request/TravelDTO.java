@@ -1,6 +1,8 @@
-package com.mas.travels.models.dto;
+package com.mas.travels.models.dto.request;
 
 import lombok.Data;
+
+import java.util.List;
 
 @Data
 public class TravelDTO {
@@ -11,4 +13,6 @@ public class TravelDTO {
     private String country;
     private String conveyance;
     private String city;
+    private InformationCardDTO informationCard;
+    private List<Long> guidesIds;
 }

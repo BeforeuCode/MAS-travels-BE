@@ -14,6 +14,7 @@ import java.util.Date;
 @Entity
 @IdClass(ClientServicedId.class)
 public class ClientServiced {
+
     private Date serviceDate;
 
     @Id

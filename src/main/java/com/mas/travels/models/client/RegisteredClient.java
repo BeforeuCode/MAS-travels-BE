@@ -4,27 +4,29 @@ import com.mas.travels.models.travel.Travel;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
+import lombok.experimental.SuperBuilder;
 
 import javax.persistence.*;
-import java.util.List;
+import java.util.Set;
 
 @Getter
 @Setter
+@SuperBuilder
 @RequiredArgsConstructor
 @Entity
 @DiscriminatorValue("registered")
 public class RegisteredClient extends Client {
 
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany(cascade={CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH})
     @JoinTable(
             name = "registered_client_travel",
             joinColumns = { @JoinColumn(name = "client_id") },
             inverseJoinColumns = { @JoinColumn(name = "travel_id") }
     )
-    private List<Travel> travels;
+    private Set<Travel> travels;
 
-    public void addClient() {}
-    public void removeClient() {}
-    public void assignTravel() {}
+    public void assignTravel(Travel travel) {
+        travels.add(travel);
+    }
 
 }
