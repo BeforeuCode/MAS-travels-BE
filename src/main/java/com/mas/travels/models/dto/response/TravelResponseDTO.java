@@ -8,6 +8,7 @@ import lombok.Data;
 
 @Data
 public class TravelResponseDTO {
+    private String title;
     private Long id;
     private Integer price;
     private String theme;
@@ -19,6 +20,7 @@ public class TravelResponseDTO {
     private InformationCard informationCard;
 
     public TravelResponseDTO(Travel travel){
+        title = travel.getTitle();
         id = travel.getId();
         price = travel.getPrice();
         theme = travel.getTheme().name();

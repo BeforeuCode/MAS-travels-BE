@@ -6,6 +6,7 @@ import java.util.List;
 
 @Data
 public class TravelDTO {
+    private String title;
     private Integer price;
     private String theme;
     private Integer rate;

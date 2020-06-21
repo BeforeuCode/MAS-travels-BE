@@ -2,6 +2,7 @@ package com.mas.travels.controlers.manager;
 
 import com.mas.travels.models.dto.request.ClientDTO;
 import com.mas.travels.models.dto.request.TravelDTO;
+import com.mas.travels.models.dto.response.ClientResponseDTO;
 import com.mas.travels.models.dto.response.TravelResponseDTO;
 import com.mas.travels.services.ClientService;
 import lombok.RequiredArgsConstructor;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.persistence.EntityNotFoundException;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 @Controller
 @RequestMapping("manager/client")
@@ -32,7 +34,7 @@ public class ManagerClientController {
     @GetMapping()
     public ResponseEntity<?> getAllRegisteredClients() throws EntityNotFoundException {
         try {
-            return new ResponseEntity<>(clientService.getAllRegisteredClients(), HttpStatus.OK);
+            return new ResponseEntity<>(clientService.getAllRegisteredClients().stream().map(ClientResponseDTO::new).collect(Collectors.toSet()), HttpStatus.OK);
         } catch (EntityNotFoundException e) {
             return new ResponseEntity<>(e, HttpStatus.BAD_REQUEST);
         }
@@ -48,7 +50,7 @@ public class ManagerClientController {
         }
     }
 
-    @PutMapping(value = "/assignTrip/{clientId}/{travelId}")
+    @PutMapping(value = "/assignTravel/{clientId}/{travelId}")
     public ResponseEntity<?> assignTravel(@PathVariable Long clientId, @PathVariable Long travelId) throws EntityNotFoundException {
         try {
             clientService.assignTravel(clientId, travelId);
