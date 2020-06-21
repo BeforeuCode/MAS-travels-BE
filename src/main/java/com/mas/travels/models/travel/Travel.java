@@ -69,6 +69,9 @@ public class Travel extends BaseEntity {
         for(RegisteredClient c : clients ) {
             c.getTravels().remove(this);
         }
+        for(Guide g : guides) {
+            g.getTravels().remove(this);
+        }
     }
 
 }

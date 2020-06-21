@@ -15,6 +15,7 @@ import javax.persistence.Entity;
 @SuperBuilder
 @DiscriminatorValue("customerService")
 public class CustomerService extends Employee {
+
     private Integer employeeRanking;
 
     @Override
